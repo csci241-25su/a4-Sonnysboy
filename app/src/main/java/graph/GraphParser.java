@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
  *     p.open(filename);
  *     Graph g = p.parse() */
 public abstract class GraphParser {
+    // this should be an interface instead of an abstract class but i'm not one to judge
 
     /** Open the given file and prepare to parse it. */
     public abstract void open(File f) throws FileNotFoundException;
