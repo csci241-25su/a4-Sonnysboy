@@ -56,17 +56,17 @@ public class ShortestPaths {
             }
             s.add(f);
             for (Map.Entry<Node, Double> w : f.getNeighbors().entrySet()) {
-                PathData pdiddy;
+                PathData pathData;
                 Node k = w.getKey();
                 double weight = w.getValue(); // weight(f,w)
                 double newDistance = fData.distance + weight;
-                if ((pdiddy = paths.get(k)) == null) {
-                    pdiddy = new PathData(newDistance, f);
-                    paths.put(k, pdiddy);
+                if ((pathData = paths.get(k)) == null) {
+                    pathData = new PathData(newDistance, f);
+                    paths.put(k, pathData);
                     frontier.add(k);
-                } else if (fData.distance + weight < pdiddy.distance) {
-                    pdiddy.distance = newDistance;
-                    pdiddy.previous = f;
+                } else if (fData.distance + weight < pathData.distance) {
+                    pathData.distance = newDistance;
+                    pathData.previous = f;
                     frontier.add(k);
                 }
             }
