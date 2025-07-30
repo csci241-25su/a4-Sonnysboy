@@ -28,7 +28,7 @@ public class Node {
 
     /** Return the map that associates each neighbor with the weight of the
      * edge to that neighbor. */
-    public HashMap<Node,Double> getNeighbors() {
+    public HashMap<Node,Double> getNeighbors() { // this really should just be a list of pairs in my opinion, it'd be more descriptive than a hashmap
         return neighbors;
     }
 
